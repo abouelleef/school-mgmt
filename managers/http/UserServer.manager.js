@@ -26,6 +26,7 @@ module.exports = class UserServer {
 
     /** server configs */
     run() {
+        app.set("trust proxy", true);
         app.use(cors({ origin: '*' }));
         app.use(express.json());
         app.use(limiter);
