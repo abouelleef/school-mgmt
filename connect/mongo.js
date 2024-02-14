@@ -1,15 +1,13 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-module.exports = ({ uri }) => {
+module.exports = async ({ uri }) => {
   //database connection
   const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
-  mongoose.connect(uri,
-    //  options 
-  );
+
 
 
   // When successfully connected
@@ -28,6 +26,10 @@ module.exports = ({ uri }) => {
   mongoose.connection.on('disconnected', function () {
     console.log('💾  Mongoose default connection disconnected');
   });
+
+  await mongoose.connect(uri,
+    //  options 
+  );
 
   // If the Node process ends, close the Mongoose connection
   process.on('SIGINT', function () {

@@ -2,9 +2,9 @@ const config = require('./config/index.config.js');
 const Cortex = require('ion-cortex');
 const ManagersLoader = require('./loaders/ManagersLoader.js');
 
-const mongoDB = config.dotEnv.MONGO_URI ? require('./connect/mongo')({
-    uri: config.dotEnv.MONGO_URI
-}) : null;
+const mongoClient = require('./connect/mongo')
+
+
 
 // const cache = require('./cache/cache.dbh')({
 //     prefix: config.dotEnv.CACHE_PREFIX ,
@@ -31,4 +31,7 @@ const managersLoader = new ManagersLoader({
 });
 const managers = managersLoader.load();
 
-managers.userServer.run();
+mongoClient({ uri: config.dotEnv.MONGO_URI })
+    .then(() => {
+        managers.userServer.run();
+    })
