@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "249a6393-8977-4a1d-ad40-a8686fc4db4f",
+		"name": "School",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27914513"
+	},
+	"item": [
+		{
+			"name": "School Admin",
+			"item": [
+				{
+					"name": "findSchool",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{shortToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userUrl}}/school/findSchool",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"school",
+								"findSchool"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSchool",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{shortToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"goood GoodSchool\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userUrl}}/school/updateSchool",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"school",
+								"updateSchool"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Super Admin",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{adminShortToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{userUrl}}/school/find",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"school",
+								"find"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{adminShortToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"65caaf92b17bfc547a2d19d1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userUrl}}/school/findById",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"school",
+								"findById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{adminShortToken}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{shortToken}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"GoodSchool - 1\",\r\n    \"address\": \"Egypt, Cairo, Giza\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userUrl}}/school/create",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"school",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

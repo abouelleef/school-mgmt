@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "25644cc9-1602-4450-ae9f-b4c2e0cedf16",
+		"name": "Classroom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27914513"
+	},
+	"item": [
+		{
+			"name": "findById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"65cc96aa47ffd0e90f6629ac\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/classroom/findById",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"classroom",
+						"findById"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findSchoolClassrooms",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{userUrl}}/classroom/findSchoolClassrooms",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"classroom",
+						"findSchoolClassrooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Good Classroom - 2\",\r\n    \"gradeLevel\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/classroom/create",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"classroom",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"65cc972ee8a1103f6113d6b4\",\r\n    \"name\": \"Bad Classroom\",\r\n    \"gradeLevel\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/classroom/update",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"classroom",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{adminShortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"65cac6406bab1a2c57acd98c\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/student/deleteById",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"student",
+						"deleteById"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

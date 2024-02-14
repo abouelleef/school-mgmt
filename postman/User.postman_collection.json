@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "8fd68fb8-d2fc-4a96-a991-da2f5b3ee6a3",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27914513"
+	},
+	"item": [
+		{
+			"name": "find",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{adminShortToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{userUrl}}/user/find",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"user",
+						"find"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"65cac28fd1e72a9d5c82dc1f\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/school/findById",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"school",
+						"findById"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{adminShortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     \"firstName\": \"admin\",\r\n//     \"lastName\": \"admin\",\r\n//     \"email\": \"admin@admin.com\",\r\n//     \"password\": \"admin\",\r\n//     \"role\": \"superAdmin\"\r\n// }\r\n{\r\n    \"firstName\": \"school\",\r\n    \"lastName\": \"admin\",\r\n    \"email\": \"school@admin.com\",\r\n    \"password\": \"school\",\r\n    \"role\": \"schoolAdmin\",\r\n    \"schoolId\": \"65cc94ab27cbb3bd492cdccf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/user/createUser",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"user",
+						"createUser"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "superAdmin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"admin\",\r\n    \"lastName\": \"admin\",\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"admin123\",\r\n    \"role\": \"superAdmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userUrl}}/user/createUser",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"user",
+								"createUser"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "393"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"189-vS9iEtLixOCIr/Vd0g6FlRYvXB0\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Feb 2024 19:28:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"user\": {\n            \"firstName\": \"admin\",\n            \"lastName\": \"admin\",\n            \"email\": \"admin@admin.com\",\n            \"password\": \"admin123\",\n            \"role\": \"superAdmin\",\n            \"_id\": \"65cbc2d9318d8fd020f995cf\",\n            \"__v\": 0\n        },\n        \"longToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWNiYzJkOTMxOGQ4ZmQwMjBmOTk1Y2YiLCJpYXQiOjE3MDc4NTI1MDUsImV4cCI6MTgwMjUyNTMwNX0.-WygOrL9WNaw81PspDEqmmS6Sgz6Ebhu-PZGTnlb9-Y\"\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/student/update",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"student",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{adminShortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     \"email\":\"admin@admin.com\",\r\n//     \"password\":\"admin\"\r\n// }\r\n{\r\n    \"email\":\"school@admin.com\",\r\n    \"password\":\"school\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/user/login",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getShortToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{adminLongToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "token",
+						"value": "{{longToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/token/v1_createShortToken",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"token",
+						"v1_createShortToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteById",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{adminShortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"65cbdd6d3b71a9b1071a3680\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/user/deleteById",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"user",
+						"deleteById"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

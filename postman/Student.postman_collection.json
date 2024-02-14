@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "eda10824-65ea-4f63-869b-c61b1756f04c",
+		"name": "Student",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27914513"
+	},
+	"item": [
+		{
+			"name": "findById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"65cc97d9e8a1103f6113d6b7\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/student/findById",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"student",
+						"findById"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAllSchoolStudents",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{userUrl}}/student/findAllSchoolStudents",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"student",
+						"findAllSchoolStudents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAllByClassroomId",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"classroomId\":\"65cc972ee8a1103f6113d6b4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/student/findAllByClassroomId",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"student",
+						"findAllByClassroomId"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Student\",\r\n    \"lastName\":\"One\",\r\n    \"dob\":\"22-01-2000\"//,\r\n    // \"classrooms\":[\"65cc972ee8a1103f6113d6b4\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/student/create",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"student",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addToClassroom",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"65ccad1a4fe1abbb27455326\",\r\n    \"classroomId\":\"65cc972ee8a1103f6113d6b4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/student/addToClassroom",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"student",
+						"addToClassroom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeFromClassroom",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"65ccad1a4fe1abbb27455326\",\r\n    \"classroomId\":\"65cc972ee8a1103f6113d6b4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/student/removeFromClassroom",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"student",
+						"removeFromClassroom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"65cc97d9e8a1103f6113d6b7\",\r\n    \"classrooms\": [\r\n        \"65cc972ee8a1103f6113d6b4\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/student/update",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"student",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteById",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shortToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"65cc97d9e8a1103f6113d6b7\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{userUrl}}/student/deleteById",
+					"host": [
+						"{{userUrl}}"
+					],
+					"path": [
+						"student",
+						"deleteById"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
